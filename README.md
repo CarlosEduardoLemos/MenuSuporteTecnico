@@ -20,17 +20,32 @@ O menu oferece as seguintes opções:
 10. **Informações do Sistema:** Exibe informações detalhadas do sistema.
 11. **Limpar Cache DNS:** Limpa apenas o cache DNS.
 12. **Reiniciar Serviços de Rede:** Restaura configurações de rede.
-13. **Desfragmentar Disco:** Otimiza o disco rígido.
+13. **Desfragmentar Disco:** Otimiza o disco rígido (permite escolher a letra do disco).
 14. **Gerenciar Usuários Locais:** Abre o gerenciamento de usuários locais.
-15. **Verificar Integridade (DISM):** Verifica a integridade do sistema com DISM.
+15. **Verificar Integridade (DISM):** Verifica a integridade do sistema com DISM (confirmação antes de executar).
 16. **Ver Logs de Eventos:** Abre o visualizador de eventos do Windows.
 17. **Testar Velocidade Básica:** Testa a velocidade de conexão com ping no Google.
-18. **Criar Ponto de Restauração:** Cria um ponto de restauração do sistema.
+18. **Criar Ponto de Restauração:** Cria um ponto de restauração do sistema (confirmação antes de executar).
 19. **Executar Comando Personalizado:** Permite executar qualquer comando do usuário.
 20. **Atualizar Programas com Winget:** Atualiza todos os programas via Winget.
-21. **Executar Manutenção Completa:** Executa uma sequência de comandos de manutenção.
+21. **Executar Manutenção Completa:** Executa uma sequência de comandos de manutenção (confirmação antes de executar).
 22. **Abrir Ferramentas do Sistema:** Abre o painel de controle.
 23. **Sair:** Encerra o programa.
+24. **Ajuda:** Exibe explicações detalhadas sobre cada comando.
+
+## Registro de Ações
+
+Todas as operações realizadas pelo menu são registradas automaticamente no arquivo `suporte_log.txt`, permitindo histórico e auditoria das atividades de suporte.
+
+## Ajuda e Segurança
+
+- O menu possui uma opção de **Ajuda** que explica cada comando.
+- Antes de executar ações críticas (como CHKDSK, DISM, criar ponto de restauração ou manutenção completa), o sistema solicita confirmação do usuário.
+- Para comandos que envolvem discos, o usuário pode escolher a letra do disco desejado.
+
+## Requisitos
+
+- Python 3.x instalado no Windows.
 
 ## Como usar
 
@@ -42,11 +57,24 @@ O menu oferece as seguintes opções:
    ```
 4. Escolha a opção desejada digitando o número correspondente e pressionando Enter.
 
-## Observações
+## Exemplo de Uso
 
-- O programa foi desenvolvido para sistemas Windows.
-- Algumas opções exigem permissões de administrador.
-- O menu reúne comandos úteis para diagnóstico, manutenção e solução de problemas comuns.
+Ao iniciar o programa, você verá um menu como este:
+
+```
+1. Verificar e Reparar Disco (CHKDSK)
+2. Reparar Arquivos de Sistema (SFC)
+...
+24. Ajuda
+```
+
+Digite o número da opção desejada e pressione Enter.
+
+## Melhorias Futuras
+
+- Interface gráfica para facilitar o uso.
+- Suporte a múltiplos idiomas.
+- Execução assíncrona de comandos demorados.
 
 ## Licença
 
